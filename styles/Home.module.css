@@ -1,61 +1,83 @@
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: rgba(255, 255, 249, 0.7); /* Adjust the background color as needed */
+    border-radius: 30px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .topLeftImage {
     position: absolute;
-    top: 5%; /* 50px / 1080 * 100 */
-    left: 2.60%; /* 50px / 1920 * 100 */
+    top: 4.5%; /* 50px / 1080 * 100 */
+    left: 4%; /* 50px / 1920 * 100 */
     width: 3.13%; /* 60px / 1920 * 100 */
     height: 5.56%; /* 60px / 1080 * 100 */
+    object-fit: contain;
 }
 
 .topRightImage {
     position: absolute;
-    top: 5.74%; /* 62px / 1080 * 100 */
-    right: 3.13%; /* 60px / 1920 * 100 */
+    top: 4.7%; /* 62px / 1080 * 100 */
+    right: 4%; /* 60px / 1920 * 100 */
     width: 50px; /* 50px / 1920 * 100 */
     height: 50px; /* 50px / 1080 * 100 */
+    object-fit: contain;
 }
 
 .centerText {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 24px;
-    color: #333;
+    font-size: 50px;
+    color: #ffffff;
 }
 
-.bottomLeftText {
+.footerText {
     position: absolute;
-    bottom: 4%; /* 62px / 1080 * 100 */
-    left: 2.60%; /* 50px / 1920 * 100 */
-    font-size: 12px;
-    text-wrap: wrap;
-    color: #333;
-}
-
-.buttonContainer {
-    position: absolute;
-    top: 50%;
-    left: 41.25%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.button {
-    background-color: #0070f3;
-    border: none;
-    color: white;
-    padding: 10px 20px;
+    bottom: 3%; /* 62px / 1080 * 100 */
+    left: 22%; /* 50px / 1920 * 100 */
+    font-size: 10px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
+    color: #ffffff;
 }
 
-.button:hover {
-    background-color: #005bb5;
+.dropdownMenu {
+    position: relative;
+    top: 50px;
+    left: -20px;
+    width: 100%;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdownMenuOpen {
+    height: auto;
+    opacity: 1;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 10px 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdownItem:hover {
+  background-color: #f0f0f0;
+}
+
+.links {
+    color: #c2c2c2; /* Change this to your desired color */
 }

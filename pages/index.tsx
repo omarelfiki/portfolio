@@ -1,8 +1,15 @@
+import { useState } from "react";
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  return (
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    }
+
+    return (
     <div>
       <Head>
         <title>Omar Elfiki</title>
@@ -11,38 +18,41 @@ export default function Home() {
       </Head>
 
         <main>
-            <img src="/icon.png" alt="Logo" className={styles.topLeftImage}/>
-            <img src="/menu.png" alt="Menu" className={styles.topRightImage}/>
-            <div className={styles.centerText}>My name is Omar! I'm an aspiring software developer studying my bachelor
-                in Computer Science at Maastricht University in Maastricht, Netherlands
+            <div className={styles.topBar}>
+                <img src="/icon.png" alt="Logo" className={styles.topLeftImage}/>
+                <img src="/menu.png" alt="Menu" className={styles.topRightImage} onClick={toggleDropdown}/>
+                {isDropdownOpen && (
+                    <div className={`${styles.dropdownMenu} ${styles.dropdownMenuOpen}`}>
+                        <a href="#about" className={styles.dropdownItem}>About</a>
+                        <a href="#projects" className={styles.dropdownItem}>Projects</a>
+                        <a href="#contact" className={styles.dropdownItem}>Contact</a>
+                    </div>
+                )}
             </div>
 
 
-            <div className={styles.buttonContainer}>
-                <button className={styles.button}>More about Me</button>
-                <button className={styles.button}>Projects</button>
+
+            <div className={styles.centerText}>COMING SOON <br/>
+                2025
             </div>
+
 
             <div
-                className={styles.bottomLeftText}>
+                className={styles.footerText}>
                 <p>Designed with <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer"
-                                    className="text-white">Figma</a> and coded in <a
+                                    className="links">Figma</a> and coded in <a
                     href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener noreferrer"
-                    className="text-white">JetBrains WebStorm</a>. <br/> Built with <a href="https://nextjs.org/"
+                    className="links">JetBrains WebStorm</a>. Built with <a href="https://nextjs.org/"
                                                                                        target="_blank"
                                                                                        rel="noopener noreferrer"
                                                                                        className="text-white">Next.js</a> and <a
                     href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className="text-white">Tailwind
                     CSS</a>, deployed with <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer"
-                                              className="text-white">Vercel</a>. <br/> Icons by <a
-                    href="https://icons8.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white">Icons8</a>.
+                                              className="text-white">Vercel</a>.
                     Form hosted by <a href="https://formspree.io/" target="_blank" rel="noopener noreferrer"
-                                      className="text-white">Formspree.io</a>. <br/> All text is in <a
+                                      className="text-white">Formspree.io</a>. All text is in <a
                         href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener noreferrer"
-                        className="text-white">Inter</a> typeface.</p>
+                        className="text-white">Inter</a> typeface.</p><p>© 2025 Omar Elfiki. All rights reserved.</p>
             </div>
         </main>
     </div>
