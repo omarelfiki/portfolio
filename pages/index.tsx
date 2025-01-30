@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
     return (
@@ -11,7 +12,7 @@ export default function Home() {
             </Head>
 
             <div>
-                <h1>Home</h1>
+                <h1 className={styles.headerText}>Home</h1>
                 <p className="font-light">I'm a software developer based in Maastricht, Netherlands. I specialize in building web
                     applications using modern technologies like React, Next.js, and Node.js. I'm passionate about
                     creating clean, maintainable, and scalable code.</p>
